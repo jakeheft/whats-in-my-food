@@ -12,4 +12,12 @@ describe 'Food Facade' do
     expect(foods.first.brand_owner).to be_a(String)
     expect(foods.first.ingredients).to be_a(String)
   end
+
+  it 'can show search result count' do
+    search = 'sweet potatoes'
+    count = FoodFacade.result_count(search)
+
+    expect(count).to be_an(Integer)
+    expect(count > 0).to eq(true)
+  end
 end
