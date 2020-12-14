@@ -7,6 +7,5 @@ class FoodFacade
 
   def self.result_count(search)
     food_data = FoodService.result_count(search)
-    food_data[:totalHits]
   end
 end
