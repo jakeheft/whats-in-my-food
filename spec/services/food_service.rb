@@ -12,4 +12,11 @@ describe FoodService do
     expect(food).to have_key(:brandOwner)
     expect(food).to have_key(:ingredients)
   end
+
+  it 'can see result count' do
+    count = FoodService.result_count('sweet potatoes')
+
+    expect(count > 10_000).to eq(true)
+    expect(count < 100_000).to eq(true)
+  end
 end
